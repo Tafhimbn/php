@@ -1,1 +1,3 @@
-yui
+<?php
+echo "Hello world";
+?>

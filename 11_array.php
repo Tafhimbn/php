@@ -134,6 +134,7 @@
     
     var_dump($todo_list);
     echo '<br>';
+    // Accessing elements of a multidimensional array
     echo $todo_list[1][1].'<br>';
 
     // Adding elements to a PHP multidimensional array
@@ -158,5 +159,92 @@
     $todo_list[2][1]=9;  // add "9"
     var_dump($todo_list);
     echo '<br>';
+
+    // Sorting a multidimensional array
+          // To sort a multidimensional array, you use the usort() function
+        
+        usort($todo_list, function ($a, $b) {
+            return $a[1] <=> $b[1];
+        });
+        
+        var_dump($todo_list);
+        echo '<br>';
+
+
+// PHP array_unshift() function
+        /* To prepend one or more elements to an array, you use the array_unshift() function.
+            Syntax:   
+              array_unshift ( array &$array , mixed ...$values ) : int
+        */
+
+   $id = [101, 102, 103];
+    array_unshift($id, 104);
+    var_dump($id);
+    echo '<br>';
+
+
+// PHP array_push() function
+   /* The array_push() function adds one or more elements to the end of an array.
+      syntax:
+          array_push ( array &$array , mixed ...$values ) : int
+    */
+    $numbers = [1, 2, 3];
+
+    array_push($numbers, 4, 5);
+    var_dump($numbers);
+    echo '<br>';
+
+// PHP array_pop() function
+    /* The array_pop() function removes an element from the end of an array and returns that element.
+       syntax:
+                array_pop ( array &$array ) : mixed
+    */
+    $num = [1, 2, 3];
+    $last_number = array_pop($num);
     
+    echo $last_number; // 3
+    echo '<br>';
+
+// PHP array_shift function
+    /* The array_shift() function removes the first element from an array and returns it.
+       syntax:
+                 array_shift(array &$array): mixed
+    */
+
+    $nums = [1, 2, 3];
+    $first_number = array_shift($nums);
+    
+    echo $last_number; // 1
+    echo '<br>';
+
+
+// PHP array_keys function
+    /* The PHP array_keys() function accepts an array and returns all the keys or a subset of the keys of the array.
+        syntax:
+                array_keys ( array $array , mixed $search_value , bool $strict = false ) : array
+
+    */
+    $num1 = [10, 20, 30];
+    $keys = array_keys($num1);
+    
+    print_r($keys); 
+    echo '<br>';
+
+// PHP array_key_exists() function
+    /* The PHP array_key_exists() function checks if a key exists in an array. 
+       syntax:
+                    array_key_exists ( string|int $key , array $array ) : bool
+    */
+
+    $roles = [
+        'admin' => 1,
+        'approver' => 2,
+        'editor' => 3,
+        'subscriber' => 4
+    ];
+
+    $result = array_key_exists('admin', $roles);
+    var_dump($result); // bool(true)
+
+
 ?>

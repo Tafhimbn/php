@@ -15,6 +15,14 @@
    $nam = "Tafhim";
      echo "I am $nam. <br>";  // <br> tag used for html pursing
 
+  // PHP print_r() Function
+    /* Syntax:
+                 print_r(variable, return);
+      variable -> Required. Specifies the variable to return information about 
+      return	  -> Optional. When set to true, this function will return the information (not print it). Default is false
+    */
+  print_r(nam);
+
 
 
     /*

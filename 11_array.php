@@ -222,6 +222,7 @@
     /* The PHP array_keys() function accepts an array and returns all the keys or a subset of the keys of the array.
         syntax:
                 array_keys ( array $array , mixed $search_value , bool $strict = false ) : array
+bool array_key_exists($index, $array)
 
     */
     $num1 = [10, 20, 30];
@@ -233,7 +234,7 @@
 // PHP array_key_exists() function
     /* The PHP array_key_exists() function checks if a key exists in an array. 
        syntax:
-                    array_key_exists ( string|int $key , array $array ) : bool
+                    array_key_exists ( array_key ,$array_name )  bool
     */
 
     $roles = [
@@ -245,6 +246,83 @@
 
     $result = array_key_exists('admin', $roles);
     var_dump($result); // bool(true)
+    echo '<br>';
+
+    // PHP in_array() function
+       /* The in_array() function returns true if a value exists in an array.
+      syntax:
+              bool in_array( value, $array_name, $mode )
+
+       */
+    $actions = [
+        'new',
+        'edit',
+        'update',
+        'view',
+        'delete',];
+    
+    $result = in_array('update', $actions);
+    var_dump($result); // bool(true)
+    echo '<br>';
+
+// PHP array_reverse() function
+    /* The array_reverse() function accepts an array and returns a new array with the order of elements in the input array reversed.
+        syntax:    
+                array_reverse ( array $array , bool $preserve_keys = false ) : array
+  */
+    $num_value = [10, 20, 30];
+    $reversed = array_reverse($num_value);
+    
+    print_r($reversed);
+    echo '<br>';
+    print_r($num_value);
+    echo '<br>';
+
+//PHP array_merge() function
+    /* To merge one or more arrays into an array.
+      syntax:
+         array_merge ( array ...$arrays ) : array
+   */
+    $server_side = ['PHP'];
+    $client_side = ['JavaScript', 'CSS', 'HTML'];
+
+    $full_stack = array_merge($server_side, $client_side);
+
+    print_r($full_stack);
+    echo '<br>';
+
+// PHP spread operator
+     /* PHP uses the three dots (...) to denote the spread operator. When you prefix an array with the spread operator, 
+     PHP will spread array elements in place.
+     Syntax:
+               ...array_var
+*/
+
+    $num1 = [4,5];
+    $score1 = [1,2,...$num1,3];
+
+    print_r($score1);
+    echo '<br>';
+
+
+// PHP list syntax
+  /* PHP provides the list() construct that assigns the elements of an array to a list of variables in one assignment.
+      syntax: 
+             list(var1, var2, ...) = $array;
+*/
+
+$prices  = [100, 0.1];
+list($buy_price, $tax) = $prices;
+
+var_dump( $buy_price, $tax );
+echo '<br>';
+
+// PHP array destructuring
+   // Suppose that you have an array returned by a function parse_url():
+
+$urls = parse_url('https://www.phptutorial.net/');
+var_dump($urls);
+echo '<br>';
 
 
 ?>

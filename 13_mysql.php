@@ -37,9 +37,14 @@
 
     // Die if connection was not successful
     if (!$conn){
-        die("<br> Sorry! Failed to connect: ".mysqli_connect_error());
-        /* In PHP, the die( ) function is used to immediately terminate script execution and output a message. 
-           It is often used to handle critical errors or to provide custom error messages before stopping the script execution abruptly. */
+        die("<br> Sorry! Failed to connect: ".mysqli_connect_error());  
+        /* The connect_error / mysqli_connect_error() function returns the error description from the last connection error, if any.
+            
+           In PHP, the die( ) function is used to immediately terminate script execution and output a message. 
+           It is often used to handle critical errors or to provide custom error messages before stopping the script execution abruptly.
+            Syntax: 
+                     die(message);
+        */
     }
     else {
         echo "<br> Connection was successful";
